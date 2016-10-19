@@ -13,7 +13,7 @@ const PORT = 3000;
 const app = express();
 
 app.set('host', process.env.HOST || 'localhost');
-app.set('port', process.env.PORT || PORT);
+app.set('port', process.env.PORT || 3000);
 
 app.use(require('morgan')('dev'));
 app.use(express.static(STATIC_DIR));
@@ -23,8 +23,19 @@ app.use(express.static(STATIC_DIR));
  */
 const router = new express.Router();
 
-router.get('*',(req,res)=>{
+router.get('*', (req, res)=> {
     res.sendFile(`${STATIC_DIR}/index.html`);
 })
 
 app.use(router);
+
+/**
+ * start server
+ */
+app.listen(PORT, HOST, error=> {
+    if (error) {
+        logger.error(error);
+    } else {
+        logger.info(`Server listening @ ${HOST}:${PORT}`);
+    }
+});
