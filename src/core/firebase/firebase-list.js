@@ -1,7 +1,20 @@
-import { firebaseDb } from './firebase';
+import {firebaseDb} from "./firebase";
 
-
+/**
+ * 파이어 베이스 리스트
+ */
 export class FirebaseList {
+    //TODO: actions에 제약을 걸 수 있는 방법을 생각해 보자. 또한 효율적인 정보 구조 노출 방법도 생각해보자.
+    //TODO: actions에 어떤 이벤트(ex: onAdd)를 걸수 있는지 알 수 없음.
+    //TODO: path에 대한 get/set 제거 여부를 검토해보자.
+    //TODO: remove 등의 메서드에 기본 reject, resolve를 등록 해 보자.
+
+    /**
+     * 생성자
+     * @param actions 액션 이벤트 정의들
+     * @param modelClass
+     * @param path 경로
+     */
     constructor(actions, modelClass, path = null) {
         this._actions = actions;
         this._modelClass = modelClass;
