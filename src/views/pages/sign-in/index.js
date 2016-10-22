@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { authActions } from 'src/core/auth';
 
-
 export function SignIn({signInWithGithub, signInWithGoogle, signInWithTwitter}) {
     return (
         <div className="g-row sign-in">

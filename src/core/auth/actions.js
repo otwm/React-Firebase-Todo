@@ -63,7 +63,7 @@ export function signInSuccess(result) {
  *
  * @returns {function(*)}
  */
-export function sighInWithGithub() {
+export function signInWithGithub() {
     return authenticate(new firebase.auth.GithubAuthProvider());
 }
 
@@ -81,7 +81,7 @@ export function signInWithGoogle() {
  *
  * @returns {function(*)}
  */
-export function sighInWithTwitter() {
+export function signInWithTwitter() {
     return authenticate(new firebase.auth.TwitterAuthProvider());
 }
 

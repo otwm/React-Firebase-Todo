@@ -1,6 +1,6 @@
 import {firebaseAuth} from "src/core/firebase";
 import * as authActions from "./actions";
-
+export { authActions };
 /**
  * 인증 초기화
  * 인증 상태 변경을 통한 사용자 상태 디스패치 및 인증 상태 변경 바인딩 구독해체.
