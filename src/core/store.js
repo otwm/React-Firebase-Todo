@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import reducers from "./reducers";
 
 export default (initialState = {}) => {
+    debugger;
     let middleware = applyMiddleware(thunk);
 
     //devtool 삽입
@@ -14,10 +15,11 @@ export default (initialState = {}) => {
     }
 
     const store = createStore(reducers, initialState, middleware);
-
+    console.log(store);
     if (module.hot) {
         module.hot.accept('./reducers', ()=> {
             store.replaceReducer(require('./reducers').default);
+            console.log(require('./reducers').default);
         });
     }
 

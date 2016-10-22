@@ -7,6 +7,9 @@ import {browserHistory} from "react-router";
 import {syncHistoryWithStore} from "react-router-redux";
 import Root from "./views/root";
 
+/**
+ * 저장소
+ */
 const store = configureStore();
 const syncedHistory = syncHistoryWithStore(browserHistory, store);
 const rootElement = document.getElementById('root');
