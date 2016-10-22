@@ -1,15 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import {AppContainer} from "react-hot-loader";
-
-import {initAuth} from './core/auth';
-import configureStore from './core/store';
-import {browserHistory} from 'react-router';
-import {syncHistoryWithStore} from 'react-router-redux';
-import Root from './views/root';
+import {initAuth} from "./core/auth";
+import configureStore from "./core/store";
+import {browserHistory} from "react-router";
+import {syncHistoryWithStore} from "react-router-redux";
+import Root from "./views/root";
 
 const store = configureStore();
-const syncedHistory = syncHistoryWithStore(browserHistory,store);
+const syncedHistory = syncHistoryWithStore(browserHistory, store);
 const rootElement = document.getElementById('root');
 
 function render(Root) {
@@ -17,13 +16,13 @@ function render(Root) {
         <AppContainer>
             <Root history={syncedHistory} store={store}/>
         </AppContainer>
-        ,rootElement
+        , rootElement
     );
 }
 
-if(module.hot){
-    module.hot.accept('./views/root',()=>{
-       render(require('./views/root').default);
+if (module.hot) {
+    module.hot.accept('./views/root', ()=> {
+        render(require('./views/root').default);
     });
 }
 
