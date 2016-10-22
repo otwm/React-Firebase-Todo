@@ -3,7 +3,6 @@ import thunk from "redux-thunk";
 import reducers from "./reducers";
 
 export default (initialState = {}) => {
-    debugger;
     let middleware = applyMiddleware(thunk);
 
     //devtool 삽입

@@ -6,7 +6,7 @@ import {getRoutes} from "./routes";
 export default function Root({history, store}) {
     return (
         <Provider store={store}>
-            <Router history={history} routes={getRoutes(store)}/>
+            <Router history={history} routes={getRoutes(store.getState)}/>
         </Provider>
     );
 }
