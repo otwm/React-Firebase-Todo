@@ -1,4 +1,4 @@
-import {firebaseAuth} from "src/core/fiebase";
+import {firebaseAuth} from "src/core/firebase";
 import * as authActions from "./actions";
 
 /**
@@ -25,3 +25,14 @@ export function initAuth(dispatch) {
  * 인증 액션 노출
  */
 export * from './action-types';
+
+/**
+ * 리듀서 노출
+ */
+export {authReducer} from './reducers';
+
+/**
+ * 인증 관련 함수 노출
+ */
+export {getAuth, isAuthenticated} from './selectors';
+
